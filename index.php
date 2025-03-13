@@ -36,8 +36,8 @@
         <label>Senha:</label>
         <input type="text" class="form-control" name="password">
         <ol>
-            <li><a href="#" class="text-center">Cadastrar</a></li>
-            <li><a href="#">Esqueci a senha</a></li>
+            <li><a href="./cadastro.php" class="text-center">Cadastrar</a></li>
+            <li><a href="./esquecer.php">Esqueci a senha</a></li>
         </ol>
         <input type="submit"  class="btn btn-primary">
     </form>
