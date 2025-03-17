@@ -20,20 +20,22 @@
         <!-- Action: ele é para onde deve enviar os dados -->
         <form action="./usuario-cadastrar.php" method="POST" class="text-center" >
             <input type="text" placeholder="nome" name="nome" class="form-control"><br>
+            <input type="text" placeholder="usuario" name="usuario" class="form-control"><br>
+            <input type="text" placeholder="senha" name="senha" class="form-control"><br>
             <!-- campo que inseri o nome do tipo text -->
-            <input type="date" placeholder="Nascimento" name="nascimento" class="form-control"><br>
+            <input type="date" placeholder="Nascimento" name="ano_nascimento" class="form-control"><br>
             <!-- campo que inseri a data de nascimento do tipo date -->
-            <input type="number" placeholder="cpf" name="telefone" class="form-control"><br>
+            <input type="number" placeholder="cpf" name="cpf" class="form-control"><br>
             <!-- campo que inseri o telefone com tipo number -->
-            <input type="number" placeholder="contato" name="contato" class="form-control"><br>
+            <input type="number" placeholder="contato" name="telefone_1" class="form-control"><br>
             <!-- campo que inseri o email com tipo email -->
-            <input type="number" placeholder="segundo contato (opcional)" name="email" class="form-control"><br>
+            <input type="number" placeholder="segundo contato (opcional)" name="telefone_2" class="form-control"><br>
             <!-- campo que inseri o email com tipo email -->
             <input type="text" placeholder="logradouro" name="logradouro" class="form-control"><br>
             <!-- campo que inseri o email com tipo email -->
-            <input type="number" placeholder="nº casa" name="numero" class="form-control"><br>
+            <input type="number" placeholder="nº casa" name="n_casa" class="form-control"><br>
             <!-- campo que inseri o email com tipo email -->
-            <input type="email" placeholder="bairro" name="email" class="form-control"><br>
+            <input type="text" placeholder="bairro" name="bairro" class="form-control"><br>
             <!-- campo que inseri o email com tipo email -->
             <input type="text" placeholder="cidade" name="cidade" class="form-control"><br>
             <!-- campo que inseri o email com tipo email -->

@@ -8,11 +8,16 @@ var_dump($_POST);
 // visualizar a variavel global $_POST
 
 $nomeFormulario = $_POST['nome'];
-$telefoneFormulario = $_POST['telefone'];
-$emailFormulario = $_POST['email'];
-$nascimentoFormulario = $_POST['nascimento'];
-$frequenteFormulario = $_POST['frequente'];
-$imgFormulario = $_POST['img'];
+$usuarioFormulario = $_POST['usuario'];
+$senhaFormulario = $_POST['senha'];
+$NascimentoFormulario = $_POST['ano_nascimento'];
+$cpfFormulario = $_POST['cpf'];
+$telefone_1Formulario = $_POST['telefone_1'];
+$telefone_2Formulario = $_POST['telefone_2'];
+$logradouroFormulario = $_POST['logradouro'];
+$n_casaFormulario = $_POST['n_casa'];
+$bairroFormulario = $_POST['bairro'];
+$cidadeFormulario = $_POST['cidade'];
 
 $dsn = 'mysql:dbname=db_login;host=127.0.0.1';
 // dsn é a para localizar o banco de dados, mysql e nome do banco é a db_chamadinha, o localhost que é 127.0.0.1
@@ -26,7 +31,7 @@ $password = '';
 $banco = new PDO($dsn, $user, $password);
 // a variavel $banco contém as variavel da conexão com o banco.
 
-$insert = 'INSERT INTO tb_alunos (nome) VALUES (:nome)' ;
+$insert = 'INSERT INTO tb_usuario (usuario,senha) VALUES (:usuario, :senha)' ;
 // script para inserir as informações  da tabela tb_alunos da coluna nome
 
 $box = $banco->prepare($insert);
@@ -34,15 +39,16 @@ $box = $banco->prepare($insert);
 
 $box->execute([
     // o box vai executar
-    ':nome' => $nomeFormulario 
+    ':usuario' => $usuarioFormulario,
+    ':senha' => $senhaFormulario,
 ]);
 
-$id_aluno = $banco -> lastInsertId();
+$id= $banco -> lastInsertId();
 
-echo $id_aluno;
+echo $id;
 
 // ---------------------------------------------------------------
-$insert = 'INSERT INTO tb_info_alunos (telefone,email,nascimento,frequente,id_alunos,img)  VALUES (:telefone,:email,:nascimento,:frequente,:id_alunos,:img)';
+$insert = 'INSERT INTO tb_pessoa (nome,ano_nascimento,cpf,telefone_1,telefone_2,logradouro,n_casa,bairro,cidade,id)  VALUES (:nome,:ano_nascimento,:cpf,:telefone_1,:telefone_2,:logradouro,:n_casa,:bairro,:cidade,:id)';
 // script para inserir as informações  da tabela tb_alunos da coluna nome
 
 $bancoprepara = $banco->prepare($insert);
@@ -50,11 +56,16 @@ $bancoprepara = $banco->prepare($insert);
 
 $bancoprepara->execute([
     // variavel bancoprepara vai executar
-    ':telefone' => $telefoneFormulario,
-    ':email' => $emailFormulario,
-    ':nascimento' => $nascimentoFormulario,
-    ':frequente' => $frequenteFormulario,
-    ':id_alunos' => $id_aluno,
-    ':img' => $imgFormulario,
+    ':id' => $id,
+    ':nome' => $nomeFormulario,
+    ':ano_nascimento' => $NascimentoFormulario,
+    ':cpf' => $cpfFormulario,
+    ':telefone_1' => $telefone_1Formulario,
+    ':telefone_2' => $telefone_2Formulario,
+    ':logradouro' => $logradouroFormulario,
+    ':n_casa' => $n_casaFormulario,
+    ':bairro' => $bairroFormulario,
+    ':cidade' => $cidadeFormulario,
+
 ]);
 

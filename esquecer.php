@@ -12,17 +12,20 @@
     form{
         width: 500px;
     }
+    .btn-primary{
+        width: 500px;
+    }
 </style>
 <section class="linha-formulario">
     <div class="formulario" class="text-center">
         <h1>Esqueci a senha</h1>
 
-        <form action="./usuario-cadastrar.php" method="POST" >
-            <input type="text" placeholder="Insira o usuario" name="nome" class="form-control"><br>
+        <form action="./usuario-esquecer.php" method="POST" >
+            <input type="text" placeholder="Insira o usuario" name="usuario" class="form-control"><br>
 
-            <input type="text" placeholder="Insira o cpf" name="nascimento" class="form-control"><br>
+            <input type="text" placeholder="Insira o cpf" name="cpf" class="form-control"><br>
 
             <input type="submit" class="btn btn-primary" class="text-center">
         </form>
     </div>
-</section>,
+</section>

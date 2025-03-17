@@ -64,9 +64,9 @@ $resultado = $banco->query($select)->fetchAll();
                 <td>
                     <a href="./ficha.php?id_pessoa=<?php echo $linha['id_pessoa'] ?>" class="btn btn-primary">Abrir</a>
                     <!-- a linha acima é o botão de abrir, que vai abrir a pagina ficha.php, perante o id do aluno selecionado -->
-                    <a href="./ficha-editar.php" class="btn btn-warning">Editar</a>
+                    <a href="./formulario_editar.php?id_pessoa=<?php echo $linha['id_pessoa'] ?>" class="btn btn-warning">Editar</a>
                     <!-- a linha acima é o botão de editar que direciona para pagina formulario-editar.php  -->
-                    <a href="#" class="btn btn-danger">Excluir</a>
+                    <a href="./formulario_deletar.php?id=<?php echo $linha['id_pessoa'] ?>" class="btn btn-danger">Excluir</a>
                     <!-- a linha acima, exclui o registro do aluno que direciona para pagina aluno-deletar.php, diante ao ID do aluno -->
                      
                     <!-- da esquerda do ? é arquivo , da direita é variavel -->
