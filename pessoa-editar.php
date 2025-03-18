@@ -1,5 +1,4 @@
 <?php
-// echo '<h1>Aluno Editar</h1>';
 // o titulo aluno editar aparece na pagina.
 
 // echo '<pre>';

@@ -1,6 +1,5 @@
 <?php
 
-echo'<h1>Aluno deletar</h1>';
 // o titulo aluno deletar aparece na pagina.
 
 $dsn = 'mysql:dbname=db_login;host=127.0.0.1';
