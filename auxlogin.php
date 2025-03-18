@@ -21,6 +21,11 @@ $resultado = $banco->query($consultaUsuarioSenha)->fetch();
 if (!empty($resultado) && $resultado != false){
     header('location:loginSucesso.php');
 }
-else{
+else{    
+    echo"    
+    <script>
+        alert('Senha ou CPF inválidos');
+    </script>";
     header('location:index.php');
+
 }

@@ -1,11 +1,11 @@
 <?php
-echo '<h1>Aluno Editar</h1>';
+// echo '<h1>Aluno Editar</h1>';
 // o titulo aluno editar aparece na pagina.
 
-echo '<pre>';
+// echo '<pre>';
 // echo pre -> organiza as informações na vertical 
 
-var_dump($_POST);
+// var_dump($_POST);
 // aparece a variavel global 
 
 
@@ -51,3 +51,4 @@ $banco->prepare($update)->execute([
     ':logradouro' => $editarLogradouro,
 ]);
 
+header('location:loginSucesso.php');

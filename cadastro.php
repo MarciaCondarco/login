@@ -19,9 +19,9 @@
         <!-- metodo de envio -> GET: manda informações atraves da url E POST: manda informações atraves do corpo -->
         <!-- Action: ele é para onde deve enviar os dados -->
         <form action="./usuario-cadastrar.php" method="POST" class="text-center" >
-            <input type="text" placeholder="nome" name="nome" class="form-control"><br>
+            <input type="text" placeholder="nome completo" name="nome" class="form-control"><br>
             <input type="text" placeholder="usuario" name="usuario" class="form-control"><br>
-            <input type="text" placeholder="senha" name="senha" class="form-control"><br>
+            <input type="text" id="senha" placeholder="senha" name="senha" class="form-control" maxlength="8"><br>
             <!-- campo que inseri o nome do tipo text -->
             <input type="date" placeholder="Nascimento" name="ano_nascimento" class="form-control"><br>
             <!-- campo que inseri a data de nascimento do tipo date -->
@@ -44,3 +44,11 @@
         </form>
     </div>
 </section>,
+<script>
+    var senha = document.cadastro.senha;
+    if (document.cadastro.senha.value.length < 8) {
+           alert("A senha deve conter no minímo 8 digitos!");
+           document.cadastro.senha.focus();
+           return false;
+    }
+</script>

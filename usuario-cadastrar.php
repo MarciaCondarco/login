@@ -31,24 +31,7 @@ $password = '';
 $banco = new PDO($dsn, $user, $password);
 // a variavel $banco contém as variavel da conexão com o banco.
 
-$insert = 'INSERT INTO tb_usuario (usuario,senha) VALUES (:usuario, :senha)' ;
-// script para inserir as informações  da tabela tb_alunos da coluna nome
-
-$box = $banco->prepare($insert);
-// o box vai guardar o banco preparado. 
-
-$box->execute([
-    // o box vai executar
-    ':usuario' => $usuarioFormulario,
-    ':senha' => $senhaFormulario,
-]);
-
-$id= $banco -> lastInsertId();
-
-echo $id;
-
-// ---------------------------------------------------------------
-$insert = 'INSERT INTO tb_pessoa (nome,ano_nascimento,cpf,telefone_1,telefone_2,logradouro,n_casa,bairro,cidade,id)  VALUES (:nome,:ano_nascimento,:cpf,:telefone_1,:telefone_2,:logradouro,:n_casa,:bairro,:cidade,:id)';
+$insert = 'INSERT INTO tb_pessoa (nome,ano_nascimento,cpf,telefone_1,telefone_2,logradouro,n_casa,bairro,cidade)  VALUES (:nome,:ano_nascimento,:cpf,:telefone_1,:telefone_2,:logradouro,:n_casa,:bairro,:cidade)';
 // script para inserir as informações  da tabela tb_alunos da coluna nome
 
 $bancoprepara = $banco->prepare($insert);
@@ -56,7 +39,6 @@ $bancoprepara = $banco->prepare($insert);
 
 $bancoprepara->execute([
     // variavel bancoprepara vai executar
-    ':id' => $id,
     ':nome' => $nomeFormulario,
     ':ano_nascimento' => $NascimentoFormulario,
     ':cpf' => $cpfFormulario,
@@ -68,4 +50,25 @@ $bancoprepara->execute([
     ':cidade' => $cidadeFormulario,
 
 ]);
+// ---------------------------------------------------------------
+$id= $banco -> lastInsertId();
+
+echo $id;
+
+
+$insert = 'INSERT INTO tb_usuario (usuario,senha,id_pessoa) VALUES (:usuario, :senha, :id_pessoa)' ;
+// script para inserir as informações  da tabela tb_alunos da coluna nome
+
+$box = $banco->prepare($insert);
+// o box vai guardar o banco preparado. 
+
+$box->execute([
+    // o box vai executar
+    ':id_pessoa' => $id,
+    ':usuario' => $usuarioFormulario,
+    ':senha' => $senhaFormulario,
+]);
+
+
+
 
