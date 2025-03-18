@@ -30,6 +30,7 @@
 </style>
 <body>
     <form action="auxlogin.php" method="POST">
+        <!-- as informações de usuario e senha são validadas no auxlogin.php -->
         <h2 class="text-center">Login</h2>
         <label>Usuario:</label>
         <input type="text" class="form-control" name="user">

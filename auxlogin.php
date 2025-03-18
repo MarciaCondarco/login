@@ -20,7 +20,9 @@ $resultado = $banco->query($consultaUsuarioSenha)->fetch();
 
 if (!empty($resultado) && $resultado != false){
     header('location:loginSucesso.php');
+    // se o resultado estiver vazio e o resultado for diferente de falso aparece o loginsucesso.php
 }
 else{
     header('location:index.php');
+    // senão volta para o index que é a pagina de login
 }
