@@ -18,37 +18,40 @@
         <h1>Cadastrar Usuario</h1>
         <!-- metodo de envio -> GET: manda informações atraves da url E POST: manda informações atraves do corpo -->
         <!-- Action: ele é para onde deve enviar os dados -->
-        <form action="./usuario-cadastrar.php" method="POST" class="text-center" >
-            <input type="text" placeholder="nome completo" name="nome" class="form-control"><br>
-            <input type="text" placeholder="usuario" name="usuario" class="form-control"><br>
-            <input type="text" id="senha" placeholder="senha" name="senha" class="form-control" maxlength="8"><br>
+        <form action="./usuario-cadastrar.php" method="POST" class="text-center"  >
+            <input type="text" placeholder="nome completo" name="nome" class="form-control" pattern="[A-Za-zá-úÁ-Ú ]+" required><br>
+            <input type="text" placeholder="usuario" name="usuario" class="form-control" required><br>
+
+            <input type="text" id="senha" placeholder="senha" name="senha" class="form-control" maxlength="8" required><br>
+
+            <input type="text" id="senhaconfirmar" placeholder="confirmar a senha" name="senha" class="form-control" maxlength="8" required><br>
+
             <!-- campo que inseri o nome do tipo text -->
-            <input type="date" placeholder="Nascimento" name="ano_nascimento" class="form-control"><br>
+            <input type="date" placeholder="Nascimento" name="ano_nascimento" class="form-control" required><br>
             <!-- campo que inseri a data de nascimento do tipo date -->
-            <input type="number" placeholder="cpf" name="cpf" class="form-control"><br>
+            <input type="number" placeholder="cpf" name="cpf" class="form-control" required><br>
             <!-- campo que inseri o telefone com tipo number -->
             <input type="number" placeholder="contato" name="telefone_1" class="form-control"><br>
             <!-- campo que inseri o email com tipo email -->
-            <input type="number" placeholder="segundo contato (opcional)" name="telefone_2" class="form-control"><br>
+            <input type="number" placeholder="segundo contato (opcional)" name="telefone_2" class="form-control" required><br>
             <!-- campo que inseri o email com tipo email -->
-            <input type="text" placeholder="logradouro" name="logradouro" class="form-control"><br>
+            <input type="text" placeholder="logradouro" name="logradouro" class="form-control" required><br>
             <!-- campo que inseri o email com tipo email -->
-            <input type="number" placeholder="nº casa" name="n_casa" class="form-control"><br>
+            <input type="number" placeholder="nº casa" name="n_casa" class="form-control" required><br>
             <!-- campo que inseri o email com tipo email -->
-            <input type="text" placeholder="bairro" name="bairro" class="form-control"><br>
+            <input type="text" placeholder="bairro" name="bairro" class="form-control" required><br>
             <!-- campo que inseri o email com tipo email -->
-            <input type="text" placeholder="cidade" name="cidade" class="form-control"><br>
+            <input type="text" placeholder="cidade" name="cidade" class="form-control" required><br>
             <!-- campo que inseri o email com tipo email -->
-            <input type="submit" class="btn btn-primary" class="text-center">
+            <input type="submit" class="btn btn-primary" class="text-center" >
             <!-- botão para enviar -->
         </form>
     </div>
 </section>,
-<script>
-    var senha = document.cadastro.senha;
-    if (document.cadastro.senha.value.length < 8) {
-           alert("A senha deve conter no minímo 8 digitos!");
-           document.cadastro.senha.focus();
-           return false;
+if($senha != $senhaconfirmar ){
+    echo"
+            <script>
+        console.log('ola');
+        </script>
+    ";
     }
-</script>

@@ -69,6 +69,12 @@ $box->execute([
     ':senha' => $senhaFormulario,
 ]);
 
-
-
+// ---------------------------------------------------------
+    // if($senhaFormulario != $senhaconfirmar ){
+    // echo"
+    //         <script>
+    //     console.log('ola');
+    //     </script>
+    // ";
+    // }
 
