@@ -18,12 +18,38 @@ $resultado = $banco->query($consultaUsuarioSenha)->fetch();
 // fetch retorna uma informação
 // fetchall retorna mais de uma informação
 
+$status = $resultado['status'];
+?>
+
+<?php if($status == "admin"){?>
+
+    <h1>Bem vindo usuario comum</h1>
+
+<?php }                ?>
+
+
+<?php if($status == "comum"){?>
+<h1>bem vindo usuario admin</h1>
+
+<?php } ?>
+
+
+
+
+
+
+
+
+
+<?php
+die;
+
 if (!empty($resultado) && $resultado != false){
     header('location:loginSucesso.php');
 }
 else{    
-    echo"    
-    <script>
+    echo
+    "<script>
         alert('Senha ou CPF inválidos');
     </script>";
     header('location:index.php');
