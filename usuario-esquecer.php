@@ -6,22 +6,26 @@ $banco = new PDO($dsn, $user, $password);
 
 
 $cpf = $_POST['cpf'];
-$nova_senha = $_POST['senha']; 
+$senha = $_POST['senha']; 
 
 
 $query = $banco->prepare("SELECT * FROM tb_pessoa WHERE cpf = :cpf");
+// o query esta fazendo uma consulta na variavel banco que prepara o script sql da tabela pessoa do campo cpf
+
 $query->execute([':cpf' => $cpf]);
 $resultado = $query->fetch();
+// variavel resultado consulta 
 
 if ($resultado) {
 
     $update = $banco->prepare("UPDATE tb_usuario SET senha = :senha WHERE id_pessoa = :id_pessoa");
-    $update->execute([':senha' => $nova_senha, ':id_pessoa' => $resultado['id']]);
+    $update->execute([':senha' => $senha, ':id_pessoa' => $resultado['id']]);
 
-    echo "<script>
+    echo 
+    "<script>
         alert('Senha alterada com sucesso!');
         window.location.href='index.php';
-</script>";
+    </script>";
 } else {
     echo 
     "<script>
