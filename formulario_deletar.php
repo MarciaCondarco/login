@@ -45,7 +45,7 @@ echo
 '<script> 
     alert("Aluno apagado com sucesso!!!")
     // aparecer uma mensagem de aluno apagado com sucesso
-    window.location.replace("index.php")
+    window.location.replace("loginSucesso.php")
 
 </script>';
 

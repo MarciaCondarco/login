@@ -31,6 +31,18 @@ $dados = $banco->query($select)->fetch();
     form {
         width: 600px;
     }
+    li{
+        list-style: none;
+        border: 1px solid black;
+        background-color: tomato;
+        width: 500px;
+        margin-top: 20px;
+    }
+    a{
+        text-decoration: none;
+        color: white;
+
+    }
 </style>
 <main class="container text-center my-5">
     <form action="#">
@@ -87,5 +99,8 @@ $dados = $banco->query($select)->fetch();
                 <input type="text" value="<?= $dados['cidade'] ?>" disabled class="form-control">
             </div>
         </div>
+        <ol>
+            <li><a href="./loginSucesso.php">Voltar</a></li>
+        </ol>
     </form>
 </main>

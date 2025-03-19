@@ -10,6 +10,9 @@
     body{
         display: flex;
         justify-content: center;
+        margin: 250px;
+        background-color: black;
+        color: white;
     }
     form{
         width: 500px;
@@ -18,6 +21,7 @@
     }
     a{
         margin-right: 60px;
+        color: white;
     }
     li{
         list-style: none;
@@ -26,6 +30,9 @@
         display: flex;
         justify-content: center;
         gap: 50px;
+    }
+    .btn-primary{
+        width: 500px;
     }
 </style>
 <body>
